@@ -2,8 +2,13 @@
 {
     internal class Program
     {
+        static int x = 6;
+
         static void Main(string[] args)
         {
+            Console.WriteLine("Cantidad de argumentos: " + args.Length);
+
+
             Console.WriteLine("Hello, \nWorld\t!");
             Console.WriteLine(777);//entero (integer -> int)
             Console.WriteLine(80.50);//doble (double)
@@ -16,7 +21,7 @@
 
             //Strings: concatenación
             Console.WriteLine("Hola " + "a todos.");
-            Console.WriteLine("14" + 6);
+            Console.WriteLine("14" + x);
             Console.WriteLine(7 + "14" + 9);
 
             Console.WriteLine(7 + 18 + 5 + "10" + (6 + 7));
@@ -73,6 +78,31 @@
 
             string[,,,,,] algo = new string[3,5,3,6,4,7];
             algo[0, 0, 0, 4, 0, 0] = "Sofía";
+
+            //Llamada a un método
+            magico(args);
+        }
+
+        string nombre = "";
+
+        public static void magico(string[] y) {
+            int cantidadArgs = y.Length;
+            //Condicionales
+            if (cantidadArgs == 0)//No hay argumentos
+            {
+                Console.BackgroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.WriteLine("Modo de uso: -version [ENTER]");
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+            else { // Sí hay argumentos
+                if (y[0].Equals("-version"))
+                    Console.WriteLine("PrimerosEjemplos v. 1.0 (c)2023");
+                else
+                    Console.WriteLine("Comando no reconocido: "+ y[0]);
+            }
+            Console.WriteLine(x+ 5);
         }
     }
 }
