@@ -79,8 +79,22 @@
             string[,,,,,] algo = new string[3,5,3,6,4,7];
             algo[0, 0, 0, 4, 0, 0] = "Sofía";
 
+
+            string[] mascotas = { };
+
             //Llamada a un método
             magico(args);
+
+            //POO (OOP)
+            Personita pers = new Personita("Pepe", 21);
+            pers.presentarse();
+            pers.nombre = "Ana";
+            pers.edad = -5;
+            pers.presentarse();
+
+            Humano hum = new Humano();
+
+            // Pilares de la POO
         }
 
         string nombre = "";
