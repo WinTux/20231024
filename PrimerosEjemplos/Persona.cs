@@ -6,11 +6,20 @@ using System.Threading.Tasks;
 
 namespace PrimerosEjemplos
 {
-    internal class Personita
+    public class Personita
     {
-        public string nombre;
-        public int edad;
-        public int estatura;
+        public string nombre { get; set; }
+        private int edad;
+        private int _estatura;
+        public int estatura {
+            get {
+                return _estatura;
+            }
+            set { 
+                if(value > 0)
+                    _estatura = value;
+            }
+        }
 
         public Personita(string nombre, int edad) {
             this.nombre = nombre;
@@ -34,6 +43,24 @@ namespace PrimerosEjemplos
         public void presentarse() {
             //Console.WriteLine("Hola, me llamo " + nombre +" y tengo " + edad + " años.");
             Console.WriteLine($"Hola, me llamo {nombre} y tengo {edad} años.");
+        }
+
+        public void cambiarEdad(int edad) {
+            if (edad >= 0)
+                this.edad = edad;
+            else
+                Console.WriteLine($"Valor de edad incorrecto {edad}; se mantiene el original {this.edad}");
+        }
+
+        public int calcularIndice() {
+            int res = div(multiplicar(edad, estatura), 2);
+            return res;
+        }
+        private int multiplicar(int a, int b) {
+            return a * b;
+        }
+        private int div(int x, int y) {
+            return x / y;
         }
     }
 

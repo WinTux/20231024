@@ -86,15 +86,32 @@
             magico(args);
 
             //POO (OOP)
+            // Pilares de la POO
             Personita pers = new Personita("Pepe", 21);
             pers.presentarse();
             pers.nombre = "Ana";
-            pers.edad = -5;
+            pers.cambiarEdad(-5);
+            pers.estatura = -28;
             pers.presentarse();
+            
+
+
+            Console.WriteLine(pers.nombre);
+            Console.WriteLine(pers.estatura);
+
+            Console.WriteLine("El índice es: " + pers.calcularIndice());
+
+            
 
             Humano hum = new Humano();
 
-            // Pilares de la POO
+            Cliente cl1 = new Cliente();
+            cl1.nombre = "Rocky";
+            cl1.cambiarEdad(29);
+            cl1.correo = "rocky@apolo.com";
+            cl1.presentarse();
+
+
         }
 
         string nombre = "";
