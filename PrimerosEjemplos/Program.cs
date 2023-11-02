@@ -1,4 +1,5 @@
-﻿namespace PrimerosEjemplos
+﻿using HerramientasGeometricas;
+namespace PrimerosEjemplos
 {
     internal class Program
     {
@@ -111,7 +112,17 @@
             cl1.correo = "rocky@apolo.com";
             cl1.presentarse();
 
+            // Sobre polimorfismo
+            FiguraGeometrica cuad = new HerramientasGeometricas.Cuadrado();
+            ((HerramientasGeometricas.Cuadrado)cuad).calcularArea();
+            Console.WriteLine(
+                ((HerramientasGeometricas.Cuadrado)cuad).mostrar()
+            );
 
+            Triangulo tri = new Triangulo();
+            HerramientasGeometricas.Cuadrado cuad2 = new HerramientasGeometricas.Cuadrado();
+
+            FiguraGeometrica[] misFiguras = { cuad,tri,cuad2};
         }
 
         string nombre = "";
