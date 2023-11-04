@@ -1,24 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace PrimerosEjemplos.ConexionConDDBB
 {
     internal class Pepe
     {
+        public void hablar() { 
+            
+        }
     }
 }
 
 namespace OtrasCosas
 {
     using Cosas;
+    using System.Diagnostics;
+
     public class Algo : UnaClaseDeCosas
     {
-
+        public void mostrar() {
+            Debug.WriteLine("Mensaje de debug.");
+        }
     }
-    namespace CosasInternas { 
-        //Hablar pasado mañana
+    namespace CosasInternas {
+        public class AlgoInterno() {
+            public int atributo;
+        }
     }
 }

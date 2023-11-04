@@ -1,4 +1,7 @@
 ﻿using HerramientasGeometricas;
+using ObjetoFrecuente = OtrasCosas.CosasInternas.AlgoInterno;
+
+
 namespace PrimerosEjemplos
 {
     internal class Program
@@ -123,6 +126,9 @@ namespace PrimerosEjemplos
             HerramientasGeometricas.Cuadrado cuad2 = new HerramientasGeometricas.Cuadrado();
 
             FiguraGeometrica[] misFiguras = { cuad,tri,cuad2};
+
+            //Namespaces anidados
+            ObjetoFrecuente ai = new ObjetoFrecuente();
         }
 
         string nombre = "";
